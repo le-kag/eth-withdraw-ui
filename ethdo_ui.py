@@ -103,12 +103,12 @@ class App(customtkinter.CTk):
         self.transaction_success_frame.grid_columnconfigure(0, weight=1)
         self.transaction_success_label = customtkinter.CTkLabel(self.transaction_success_frame, text="Your withdrawal is confirmed",
                                                     font=customtkinter.CTkFont(size=17, weight="bold"))
-        self.transaction_success_label.grid(row=0, column=0, padx=30, pady=(150, 5))
-        self.tx_value_label = customtkinter.CTkLabel(self.transaction_success_frame, text="",
-                                                    font=customtkinter.CTkFont(size=15))
-        self.tx_value_label.grid(row=1, column=0, padx=30, pady=(5, 15))
+        self.transaction_success_label.grid(row=0, column=0, padx=30, pady=(100, 5))
+        self.etherscan_link_label = customtkinter.CTkLabel(self.transaction_success_frame, text="",
+                                                            font=customtkinter.CTkFont(size=20))
+        self.etherscan_link_label.grid(row=2, column=0, padx=30, pady=(0, 15))
         self.transaction_success_button = customtkinter.CTkButton(self.transaction_success_frame, text="Broadcast", command=self.transaction_success_event, width=200)
-        self.transaction_success_button.grid(row=2, column=0, padx=30, pady=(15, 15))
+        self.transaction_success_button.grid(row=4, column=0, padx=30, pady=(15, 15))
 
 
         # create transaction error frame
@@ -185,10 +185,6 @@ class App(customtkinter.CTk):
         # Hide the credentials error frame initially
         self.credentials_error_frame.grid_remove()
 
-    def create_hyperlink(self, label, link):
-        label.bind("<Button-1>", lambda e, url=link: webbrowser.open_new(url))
-        label.configure(fg="blue", cursor="hand2")
-
     def credentials_event(self):
         print("credentials pressed - mnemonic:", self.mnemonic_entry.get())
         self.mnemonic_value_label.configure(text=self.mnemonic_entry.get())
@@ -213,15 +209,13 @@ class App(customtkinter.CTk):
 
     def confirmation_event(self):
         print("confirmation pressed")
+        link = "https://etherscan.io/address/" + self.wallet_entry.get()
+        self.etherscan_link_label.configure(text=link)
         self.confirmation_frame.grid_forget()
         # show transaction success frame
         self.transaction_success_frame.grid(row=0, column=0, sticky="nsew", padx=100)
 
     def transaction_success_event(self):
-        tx_text = "Tx"
-        link = "https://etherscan.io/address/" + self.wallet_entry.get()
-        self.tx_value_label.configure(text=tx_text)
-        self.create_hyperlink(self.tx_value_label, link)
         self.transaction_success_frame.grid_forget()
         self.stop_node_frame.grid(row=0, column=0, sticky="nsew", padx=100)
 
