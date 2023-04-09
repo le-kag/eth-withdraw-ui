@@ -33,7 +33,7 @@ class App(customtkinter.CTk):
         self.explanation_label = customtkinter.CTkLabel(self.start_frame, text="This is a tool to help you\nwithdraw your ETH from the\nEthereum 2.0 deposit contract",
                                                     font=customtkinter.CTkFont(size=17, weight="bold"))
         self.explanation_label.grid(row=1, column=0, padx=30, pady=(15, 15), sticky="nsew")
-        self.start_button = customtkinter.CTkButton(self.start_frame, text="Start", command=self.start_event, width=200)
+        self.start_button = customtkinter.CTkButton(self.start_frame, text="Start", command=self.start_event, width=150, height=40, corner_radius=20, fg_color="#7393B3", text_color="#F0FFFF", font=customtkinter.CTkFont(size=17))
         self.start_button.grid(row=2, column=0, padx=30, pady=(15, 15))
 
 
@@ -45,9 +45,9 @@ class App(customtkinter.CTk):
         self.credentials_label.grid(row=0, column=0, padx=30, pady=(150, 15))
         self.mnemonic_entry = customtkinter.CTkEntry(self.credentials_frame, width=200, placeholder_text="Withdrawal mnemonic 'word1 word2 ...'")
         self.mnemonic_entry.grid(row=1, column=0, padx=30, pady=(15, 15))
-        self.credentials_button = customtkinter.CTkButton(self.credentials_frame, text="Continue", command=self.credentials_event, width=200)
+        self.credentials_button = customtkinter.CTkButton(self.credentials_frame, text="Continue", command=self.credentials_event, width=200, height=30, corner_radius=20, fg_color="#7393B3", text_color="#F0FFFF", font=customtkinter.CTkFont(size=17))
         self.credentials_button.grid(row=3, column=0, padx=30, pady=(15, 15))
-        self.reset_button = customtkinter.CTkButton(self.credentials_frame, text="Reset", width=150)
+        self.reset_button = customtkinter.CTkButton(self.credentials_frame, text="Reset", width=150, height=30, corner_radius=20, fg_color="#7393B3", text_color="#F0FFFF", font=customtkinter.CTkFont(size=17))
         self.reset_button.grid(row=4, column=0, padx=30, pady=(0, 30))
 
         # create credentials success frame
@@ -59,7 +59,7 @@ class App(customtkinter.CTk):
         self.mnemonic_value_label = customtkinter.CTkLabel(self.credentials_success_frame, text="",
                                                     font=customtkinter.CTkFont(size=15))
         self.mnemonic_value_label.grid(row=1, column=0, padx=30, pady=(5, 15))
-        self.credentials_success_button = customtkinter.CTkButton(self.credentials_success_frame, text="Continue", command=self.credentials_success_event, width=200)
+        self.credentials_success_button = customtkinter.CTkButton(self.credentials_success_frame, text="Continue", command=self.credentials_success_event, width=200, height=30, corner_radius=20, fg_color="#7393B3", text_color="#F0FFFF", font=customtkinter.CTkFont(size=17))
         self.credentials_success_button.grid(row=2, column=0, padx=30, pady=(15, 15))
 
 
@@ -69,7 +69,7 @@ class App(customtkinter.CTk):
         self.credentials_error_label = customtkinter.CTkLabel(self.credentials_error_frame, text="Your seed is incorrect",
                                                   font=customtkinter.CTkFont(size=17, weight="bold"))
         self.credentials_error_label.grid(row=0, column=0, padx=30, pady=(150, 15))
-        self.credentials_error_button = customtkinter.CTkButton(self.credentials_error_frame, text="Continue", width=200)
+        self.credentials_error_button = customtkinter.CTkButton(self.credentials_error_frame, text="Continue", width=200, height=30, corner_radius=20, fg_color="#7393B3", text_color="#F0FFFF", font=customtkinter.CTkFont(size=17))
 
         # create wallet frame
         self.wallet_frame = customtkinter.CTkFrame(self, corner_radius=20)
@@ -79,9 +79,9 @@ class App(customtkinter.CTk):
         self.wallet_label.grid(row=0, column=0, padx=30, pady=(150, 15))
         self.wallet_entry = customtkinter.CTkEntry(self.wallet_frame, width=200, placeholder_text="New withdrawal address")
         self.wallet_entry.grid(row=1, column=0, padx=30, pady=(15, 15))
-        self.wallet_button = customtkinter.CTkButton(self.wallet_frame, text="Continue", command=self.wallet_event, width=200)
+        self.wallet_button = customtkinter.CTkButton(self.wallet_frame, text="Continue", command=self.wallet_event, width=200, height=30, corner_radius=20, fg_color="#7393B3", text_color="#F0FFFF", font=customtkinter.CTkFont(size=17))
         self.wallet_button.grid(row=3, column=0, padx=30, pady=(15, 15))
-        self.wallet_reset_button = customtkinter.CTkButton(self.wallet_frame, text="Reset", width=150)
+        self.wallet_reset_button = customtkinter.CTkButton(self.wallet_frame, text="Reset", width=150, height=30, corner_radius=20, fg_color="#7393B3", text_color="#F0FFFF", font=customtkinter.CTkFont(size=17))
         self.wallet_reset_button.grid(row=4, column=0, padx=30, pady=(0, 30))
 
         # create confirmation frame
@@ -93,9 +93,9 @@ class App(customtkinter.CTk):
         self.wallet_value_label = customtkinter.CTkLabel(self.confirmation_frame, text="",
                                                     font=customtkinter.CTkFont(size=15))
         self.wallet_value_label.grid(row=1, column=0, padx=30, pady=(5, 15))
-        self.confirmation_button = customtkinter.CTkButton(self.confirmation_frame, text="Confirm", command=self.confirmation_event, width=200)
+        self.confirmation_button = customtkinter.CTkButton(self.confirmation_frame, text="Confirm", command=self.confirmation_event, width=200, height=30, corner_radius=20, fg_color="#7393B3", text_color="#F0FFFF", font=customtkinter.CTkFont(size=17))
         self.confirmation_button.grid(row=2, column=0, padx=30, pady=(15, 15))
-        self.confirmation_reset_button = customtkinter.CTkButton(self.confirmation_frame, text="Reset", width=150)
+        self.confirmation_reset_button = customtkinter.CTkButton(self.confirmation_frame, text="Reset", width=150, height=30, corner_radius=20, fg_color="#7393B3", text_color="#F0FFFF", font=customtkinter.CTkFont(size=17))
         self.confirmation_reset_button.grid(row=3, column=0, padx=30, pady=(0, 30))
 
         # create transaction success frame
@@ -105,9 +105,9 @@ class App(customtkinter.CTk):
                                                     font=customtkinter.CTkFont(size=17, weight="bold"))
         self.transaction_success_label.grid(row=0, column=0, padx=30, pady=(100, 5))
         self.etherscan_link_label = customtkinter.CTkLabel(self.transaction_success_frame, text="",
-                                                            font=customtkinter.CTkFont(size=20))
+                                                            font=customtkinter.CTkFont(size=15))
         self.etherscan_link_label.grid(row=2, column=0, padx=30, pady=(0, 15))
-        self.transaction_success_button = customtkinter.CTkButton(self.transaction_success_frame, text="Broadcast", command=self.transaction_success_event, width=200)
+        self.transaction_success_button = customtkinter.CTkButton(self.transaction_success_frame, text="Broadcast", command=self.transaction_success_event, width=200, height=30, corner_radius=20, fg_color="#7393B3", text_color="#F0FFFF", font=customtkinter.CTkFont(size=17))
         self.transaction_success_button.grid(row=4, column=0, padx=30, pady=(15, 15))
 
 
@@ -117,7 +117,7 @@ class App(customtkinter.CTk):
         self.transaction_error_label = customtkinter.CTkLabel(self.transaction_error_frame, text="Your withdrawal is incorrect",
                                                   font=customtkinter.CTkFont(size=17, weight="bold"))
         self.transaction_error_label.grid(row=0, column=0, padx=30, pady=(150, 15))
-        self.transaction_error_button = customtkinter.CTkButton(self.transaction_error_frame, text="Back", width=200)
+        self.transaction_error_button = customtkinter.CTkButton(self.transaction_error_frame, text="Back", width=200, height=30, corner_radius=20, fg_color="#7393B3", text_color="#F0FFFF", font=customtkinter.CTkFont(size=17))
         self.transaction_success_button.grid(row=1, column=0, padx=30, pady=(15, 15))
 
         # create seed frame
@@ -126,11 +126,11 @@ class App(customtkinter.CTk):
         self.seed_label = customtkinter.CTkLabel(self.seed_frame, text="⚠️ This is a ONE TIME process ⚠️\nPress confirm after verifying your values",
                                                  font=customtkinter.CTkFont(size=20, weight="bold"))
         self.seed_label.grid(row=0, column=0, padx=30, pady=(30, 15))
-        self.reveal_button = customtkinter.CTkButton(self.seed_frame, text="Reveal", width=200)
+        self.reveal_button = customtkinter.CTkButton(self.seed_frame, text="Reveal", width=200, corner_radius=20, fg_color="#7393B3", text_color="#F0FFFF", font=customtkinter.CTkFont(size=17))
         self.reveal_button.grid(row=1, column=0, padx=30, pady=(80, 30))
-        self.confirm_button = customtkinter.CTkButton(self.seed_frame, text="Confirm", command=self.broadcast_event, width=150)
+        self.confirm_button = customtkinter.CTkButton(self.seed_frame, text="Confirm", command=self.broadcast_event, width=150, height=30, corner_radius=20, fg_color="#7393B3", text_color="#F0FFFF", font=customtkinter.CTkFont(size=17))
         self.confirm_button.grid(row=2, column=0, padx=30, pady=(15, 30))
-        self.back_button = customtkinter.CTkButton(self.seed_frame, text="Back", command=self.back_event, width=150)
+        self.back_button = customtkinter.CTkButton(self.seed_frame, text="Back", command=self.back_event, width=150, height=30, corner_radius=20, fg_color="#7393B3", text_color="#F0FFFF", font=customtkinter.CTkFont(size=17))
         self.back_button.grid(row=3, column=0, padx=30, pady=(15, 15))
 
         # create broadcast frame
@@ -139,21 +139,25 @@ class App(customtkinter.CTk):
         self.broadcast_label = customtkinter.CTkLabel(self.broadcast_frame, text="Press broadcast to complete the process",
                                                  font=customtkinter.CTkFont(size=20, weight="bold"))
         self.broadcast_label.grid(row=0, column=0, padx=30, pady=(30, 15))
-        self.broadcast_button = customtkinter.CTkButton(self.broadcast_frame, text="Broadcast", width=150)
+        self.broadcast_button = customtkinter.CTkButton(self.broadcast_frame, text="Broadcast", width=150, height=30, corner_radius=20, fg_color="#7393B3", text_color="#F0FFFF", font=customtkinter.CTkFont(size=17))
         self.broadcast_button.grid(row=1, column=0, padx=30, pady=(60, 30))
-        self.back_button2 = customtkinter.CTkButton(self.broadcast_frame, text="Back", command=self.second_back_event, width=150)
+        self.back_button2 = customtkinter.CTkButton(self.broadcast_frame, text="Back", command=self.second_back_event, width=150, height=30, corner_radius=20, fg_color="#7393B3", text_color="#F0FFFF", font=customtkinter.CTkFont(size=17))
         self.back_button2.grid(row=2, column=0, padx=30, pady=(15, 15))
 
         # create stop node frame
         self.stop_node_frame = customtkinter.CTkFrame(self, corner_radius=20)
         self.stop_node_frame.grid_columnconfigure(0, weight=1)
         self.stop_node_label = customtkinter.CTkLabel(self.stop_node_frame, text="Stopping your node",
-                                                 font=customtkinter.CTkFont(size=20, weight="bold"))
+                                                    font=customtkinter.CTkFont(size=20, weight="bold"))
         self.stop_node_label.grid(row=0, column=0, padx=30, pady=(30, 15))
-        self.stop_node_button = customtkinter.CTkButton(self.stop_node_frame, text="ok", width=150)
-        self.stop_node_button.grid(row=1, column=0, padx=30, pady=(60, 30))
-        self.back_button3 = customtkinter.CTkButton(self.stop_node_frame, text="Back", command=self.third_back_event, width=150)
+
+        self.stop_node_instructions_label = customtkinter.CTkLabel(self.stop_node_frame, text="To stop your node safely, follow the instructions...",
+                                                                font=customtkinter.CTkFont(size=12), wraplength=400)
+        self.stop_node_instructions_label.grid(row=1, column=0, padx=30, pady=(15, 15))
+
+        self.back_button3 = customtkinter.CTkButton(self.stop_node_frame, text="Back", command=self.third_back_event, width=150, height=30, corner_radius=20, fg_color="#7393B3", text_color="#F0FFFF", font=customtkinter.CTkFont(size=17))
         self.back_button3.grid(row=2, column=0, padx=30, pady=(15, 15))
+
 
         # Hide the credentials frame initially
         self.credentials_frame.grid_remove()
@@ -240,7 +244,7 @@ class App(customtkinter.CTk):
 
     def third_back_event(self):
         self.stop_node_frame.grid_forget()
-        self.start_frame.grid(row=0, column=0, sticky="nsew", padx=100)
+        self.credentials_frame.grid(row=0, column=0, sticky="nsew", padx=100)
 
     def broadcast_event(self):
         print("Broadcast pressed")
